@@ -11,6 +11,15 @@ interface ImageProps {
 export const Container = styled.div`
   display: flex;
   height: 100%;
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+    /* flex-direction: column-reverse; */
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column-reverse;
+  }
 `
 
 export const SideContainer = styled.div`
@@ -30,6 +39,11 @@ export const SideContainer = styled.div`
     width: 100%;
     gap: 7px;
     max-width: 50%;
+
+    @media screen and (max-width: 490px) {
+      max-width: 80%;
+    }
+
   }
 
   .form_login_user {
@@ -46,6 +60,16 @@ export const SideContainer = styled.div`
       width: 100%;
     }
   }
+  
+  @media screen and (max-width: 1024px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
 `
 
 export const Input = styled.input`
@@ -55,6 +79,18 @@ export const Input = styled.input`
   border: none;
   background: ${COLORS.BackgroundInput};
   border-radius: 5px;
+
+  @media screen and (max-width: 767px) {
+    padding: 3% 3%;
+  }
+
+  @media screen and (max-width: 490px) {
+    padding: 4% 3%;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: 4% 3%;
+  }
 `
 
 export const Button = styled.button`
@@ -82,10 +118,15 @@ export const ContainerImageDemo = styled.div`
   align-items: center;
   height: 100%;
   width: 60%;
+
+  @media screen and (max-width: 767px) {
+   display: none;
+  }
 `
 
 export const Image = styled.img<ImageProps>`
   width: ${(props) => props.size}%;
+
 `
 
 export const ImageEye = styled.img<ImageProps>`
@@ -94,4 +135,16 @@ export const ImageEye = styled.img<ImageProps>`
   right: 10px;
   top: 10px;
   width: ${(props) => props.size}%;
+
+  @media screen and (max-width: 767px) {
+    top: 6px;
+  }
+
+  @media screen and (max-width: 490px) {
+    top: 10px;
+  }
+
+  @media screen and (max-width: 420px) {
+    top: 10px;
+  }
 `
