@@ -1,5 +1,5 @@
 // React
-import React, { ReactNode, useState } from 'react'
+import React, { useState } from 'react'
 
 // Local
 import DemoImg from '../../../static/Images/log-in.svg'
@@ -18,6 +18,9 @@ import {
   ImageEye
 } from './styles'
 
+// Const
+import { COLORS } from '../../../styles/variables'
+
 function Login() {
   const [showPassword, setShowPassword] = useState(false)
 
@@ -35,7 +38,7 @@ function Login() {
       <SideContainer>
         <div className='container_side_secundary'>
           <Image
-            size={"30"}
+            size={'30'}
             src={Logo}
             alt='Logo'
           />
@@ -48,6 +51,7 @@ function Login() {
                   size={'10'}
                   src={EyeOff}
                   alt='show password'
+                  color={COLORS.BlackDark}
                   onClick={handleShowPassword}
                 />
               ) : (
@@ -55,6 +59,7 @@ function Login() {
                   size={'10'}
                   src={EyeON}
                   alt='show password'
+                  color={COLORS.BlackDark}
                   onClick={handleShowPassword}
                 />
               )}
@@ -67,7 +72,7 @@ function Login() {
       </SideContainer>
       <ContainerImageDemo>
         <Image
-          size={"45"}
+          size={'45'}
           src={DemoImg}
           alt='Image demo'
         />
