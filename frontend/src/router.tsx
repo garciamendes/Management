@@ -11,7 +11,7 @@ export default function Routes() {
     <HashRouter>
       <Switch>
         <Route path='/' exact component={login} />
-        <Route path='/sign' exact component={sign} />
+        <Route path='/sign' component={sign} />
         <Route path='/home' component={home} />
         {/* <Route path='/detail/hosts' component={hostsDetails} /> */}
         {/* <Route path='/list/hosts' component={hosts} /> */}

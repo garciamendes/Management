@@ -11,7 +11,9 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscal
+    -moz-osx-font-smoothing: grayscal;
+
+    outline: none;
   }
 
   html, body, #root {

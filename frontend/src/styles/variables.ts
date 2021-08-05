@@ -8,6 +8,7 @@ export const COLORS = {
   Yellow: '#FFD166',
   Gray: '#ADB5BD',
   Background: '#E5E5E5',
+  BackgroundInput: '#E3E3E3',
 }
 
 export const HeaderHeight = {
