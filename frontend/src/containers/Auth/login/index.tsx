@@ -72,7 +72,7 @@ function Login() {
       </SideContainer>
       <ContainerImageDemo>
         <Image
-          size={'45'}
+          size={'50'}
           src={DemoImg}
           alt='Image demo'
         />
