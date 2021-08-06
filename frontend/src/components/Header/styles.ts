@@ -66,7 +66,7 @@ export const Container = styled.div`
       margin: 5px auto;
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
-      background-color: ${COLORS.BlackDark};
+      background-color: ${COLORS.White};
     }
 
     .hamburger.active .bar:nth-child(2) {

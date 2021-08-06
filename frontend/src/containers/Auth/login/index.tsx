@@ -7,6 +7,7 @@ import Logo from '../../../static/Images/logo.svg'
 import EyeON from '../../../static/Images/eye-on.svg'
 import EyeOff from '../../../static/Images/eye-off.svg'
 
+
 // Styles
 import {
   Container,
@@ -22,15 +23,26 @@ import {
 import { COLORS } from '../../../styles/variables'
 
 function Login() {
+
   const [showPassword, setShowPassword] = useState(false)
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
   function handleShowPassword() {
     setShowPassword(!showPassword)
   }
 
-  function handleEnter() {
+  async function handleEnter() {
 
-    alert('Funciona')
+    if (username.trim() === '' || password.trim() === '') {
+      return (
+        alert('Todos os campos são obrigatórios'),
+        setUsername(''),
+        setPassword('')
+      )
+    }
+
+    alert("asd")
   }
 
   return (
@@ -43,9 +55,19 @@ function Login() {
             alt='Logo'
           />
           <form className='form_login_user'>
-            <Input type='text' placeholder='Username' />
+            <Input
+              type='text'
+              placeholder='Username'
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
             <div className='content_password_eye'>
-              <Input type={`${showPassword ? 'type' : 'password'}`} placeholder='Password' />
+              <Input
+                type={`${showPassword ? 'type' : 'password'}`}
+                placeholder='Password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
               {showPassword ? (
                 <ImageEye
                   size={'10'}

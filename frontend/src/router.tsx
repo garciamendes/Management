@@ -10,10 +10,10 @@ export default function Routes() {
     <HashRouter>
       <Switch>
         <Route path='/' exact component={login} />
-        <Route path='/home' component={home} />
-        {/* <Route path='/detail/hosts' component={hostsDetails} /> */}
-        {/* <Route path='/list/hosts' component={hosts} /> */}
-        {/* <Route path='/list/vulnerabilities' component={vulnerabilities} /> */}
+        <Route path='/dashboard' component={home} />
+        {/* <Route path='/admin' component={admin} /> */}
+        {/* <Route path='/hosts' component={hosts} /> */}
+        {/* <Route path='/vulnerabilities' component={vulnerabilities} /> */}
       </Switch>
     </HashRouter>
   )
