@@ -1,19 +1,38 @@
 // React
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 // Components
 import Header from '../../components/Header';
 
+// Services
+import { api } from '../../services/Api'
+
 // Styles
 import { Container } from './styles';
 
-function home() {
+function Home() {
+
+  const [list, setList] = useState([])
+
+  useEffect(() => {
+    api.get('/api/assets', {}).then((Response) => setList(Response.data));
+  }, [])
+
+  console.log(list);
+
+
   return (
     <Container>
       <Header />
-      <h1>home</h1>
+      <ul>
+        {list.map((content, index) => (
+          <li key={index}>
+            {content}
+          </li>
+        ))}
+      </ul>
     </Container>
   )
 }
 
-export default home
+export default Home
