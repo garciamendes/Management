@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 
 // Components
 import Header from '../../components/Header';
-import CardHighligted, { cardVulnerabilitiesProps } from '../../components/CardHighligted';
+import CardHighligted from '../../components/CardHighligted';
+import CardGraphics from '../../components/CardGraphics';
 
 // Styles
 import {
   Container,
   HighlightedVulnerabilities,
+  ScrollMaster,
 } from './styles';
 
 // interface HighlightedType {
@@ -16,10 +18,11 @@ import {
 // }
 
 function Home() {
+
   const api = [
-    { amount: 10, level: 'Strong', vulnerabilitySituation: 10.0 },
-    { amount: 7, level: 'Serious', vulnerabilitySituation: 7.0 },
-    { amount: 5, level: 'Reasonable', vulnerabilitySituation: 4.0 },
+    { amount: 10, level: 'Critical', vulnerabilitySituation: 10.0 },
+    { amount: 7, level: 'High', vulnerabilitySituation: 7.0 },
+    { amount: 5, level: 'Medium', vulnerabilitySituation: 4.0 },
     { amount: 2, level: 'Low', vulnerabilitySituation: 2.0 },
   ]
 
@@ -38,6 +41,12 @@ function Home() {
           />
         ))}
       </HighlightedVulnerabilities>
+      <div className='container_graphics'>
+        <ScrollMaster>
+          <CardGraphics title='Monthly report' />
+          <CardGraphics title='Annual reports' />
+        </ScrollMaster>
+      </div>
     </Container>
   )
 }
