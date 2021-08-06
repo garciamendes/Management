@@ -66,7 +66,7 @@ function Login() {
             </div>
           </form>
           <Button onClick={handleEnter}>
-            Enter
+            Access
           </Button>
         </div>
       </SideContainer>
