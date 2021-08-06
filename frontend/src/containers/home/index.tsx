@@ -1,36 +1,43 @@
 // React
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 // Components
 import Header from '../../components/Header';
-
-// Services
-import { api } from '../../services/Api'
+import CardHighligted, { cardVulnerabilitiesProps } from '../../components/CardHighligted';
 
 // Styles
-import { Container } from './styles';
+import {
+  Container,
+  HighlightedVulnerabilities,
+} from './styles';
+
+// interface HighlightedType {
+//   HighVulne: cardVulnerabilitiesProps
+// }
 
 function Home() {
+  const api = [
+    { amount: 10, level: 'Strong', vulnerabilitySituation: 10.0 },
+    { amount: 7, level: 'Serious', vulnerabilitySituation: 7.0 },
+    { amount: 5, level: 'Reasonable', vulnerabilitySituation: 4.0 },
+    { amount: 2, level: 'Low', vulnerabilitySituation: 2.0 },
+  ]
 
-  const [list, setList] = useState([])
-
-  useEffect(() => {
-    api.get('/api/assets', {}).then((Response) => setList(Response.data));
-  }, [])
-
-  console.log(list);
-
+  const [highlighted, setHighlighted] = useState<any>(api)
 
   return (
     <Container>
       <Header />
-      <ul>
-        {list.map((content, index) => (
-          <li key={index}>
-            {content}
-          </li>
+      <HighlightedVulnerabilities>
+        {highlighted.map((content: any, index: any) => (
+          <CardHighligted
+            key={index}
+            amount={content.amount}
+            level={content.level}
+            vulnerabilitySituation={content.vulnerabilitySituation}
+          />
         ))}
-      </ul>
+      </HighlightedVulnerabilities>
     </Container>
   )
 }

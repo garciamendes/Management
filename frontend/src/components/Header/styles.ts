@@ -12,7 +12,7 @@ export const Container = styled.div`
   width: 100%;
   padding-right: 1%;
   height: ${HeaderHeight.Height}px;
-  background-color: ${COLORS.BlueDark};
+  background-color: ${COLORS.GreenLight};
 
   .sign_out {
     cursor: pointer;
