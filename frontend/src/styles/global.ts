@@ -14,6 +14,8 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscal;
 
     outline: none;
+    list-style: none;
+    text-decoration: none;
   }
 
   html, body, #root {
