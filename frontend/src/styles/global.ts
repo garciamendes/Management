@@ -1,8 +1,14 @@
 // Third party
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components'
 
 // Local
-import { COLORS } from './variables';
+import { COLORS } from './variables'
+
+interface ScrollMasterProps {
+  flexDirection?: string
+  flexWrap?: string
+  justifyContent?: string
+}
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -27,4 +33,27 @@ export const GlobalStyle = createGlobalStyle`
     object-fit: cover;
   }
 
-`;
+`
+export const ScrollMaster = styled.div<ScrollMasterProps>`
+  overflow-y: auto;
+  display: flex;
+  flex-direction: ${(props) => props.flexDirection};
+  flex-wrap: ${(props) => props.flexWrap};
+  justify-content: ${(props) => props.justifyContent};
+  align-items: center;
+  gap: 20px;
+  padding: 1% 0;
+  height: 100%;
+  width: 100%;
+
+  ::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+    border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${COLORS.GreenLight};
+    border-radius: 20px;
+  }
+`

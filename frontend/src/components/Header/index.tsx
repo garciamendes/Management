@@ -26,13 +26,10 @@ function Header() {
             <Link to='/dashboard' className='nav-link'>Dashboard</Link>
           </li>
           <li className='nav-item'>
-            <Link to='/hosts' className='nav-link'>Host</Link>
+            <Link to='/hosts' className='nav-link'>Hosts</Link>
           </li>
           <li className='nav-item'>
-            <Link to='/vulnerabilities' className='nav-link'>Vulnerabilities</Link>
-          </li>
-          <li className='nav-item'>
-            <Link to='/admin' className='nav-link'>Admin</Link>
+            <Link to='/host/:id' className='nav-link'>Vulnerabilities</Link>
           </li>
           <li className='nav-item'>
             <img className='sign_out' src={SignOut} alt='Sign out application' />
