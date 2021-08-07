@@ -12,7 +12,6 @@ export const Container = styled.div`
   padding: 1%;
   width: 30%;
   border-radius: 14px;
-  filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.1));
   background-color: ${COLORS.White};
 
   .content_sub_title {

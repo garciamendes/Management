@@ -23,7 +23,6 @@ export const SideContainer = styled.div`
   height: 100%;
   width: 40%;
   background: ${COLORS.White};
-  box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.12);
   border-radius: 0px 50px 50px 0px;
 
   .container_side_secundary {

@@ -36,7 +36,6 @@ export const Container = styled.div`
       text-align: center;
       transition: 0.3s;
       border-radius: 10px 0px 0px 10px;
-      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.2);
       background-color: ${COLORS.White};
     }
 

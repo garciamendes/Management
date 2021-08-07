@@ -12,6 +12,5 @@ export const Container = styled.div`
   height: 80%;
   padding: 1% 0;
   border-radius: 14px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   background: ${COLORS.White};
 `
