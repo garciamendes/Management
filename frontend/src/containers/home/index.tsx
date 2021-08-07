@@ -10,8 +10,10 @@ import CardGraphics from '../../components/CardGraphics';
 import {
   Container,
   HighlightedVulnerabilities,
-  ScrollMaster,
 } from './styles';
+
+// Local
+import { ScrollMaster } from '../../styles/global';
 
 // interface HighlightedType {
 //   HighVulne: cardVulnerabilitiesProps
@@ -20,10 +22,10 @@ import {
 function Home() {
 
   const api = [
-    { amount: 10, level: 'Critical', vulnerabilitySituation: 10.0 },
-    { amount: 7, level: 'High', vulnerabilitySituation: 7.0 },
-    { amount: 5, level: 'Medium', vulnerabilitySituation: 4.0 },
-    { amount: 2, level: 'Low', vulnerabilitySituation: 2.0 },
+    { amount: 1000, level: 'Critical', vulnerabilitySituation: 10.0 },
+    { amount: 790, level: 'High', vulnerabilitySituation: 7.0 },
+    { amount: 520, level: 'Medium', vulnerabilitySituation: 4.0 },
+    { amount: 2000, level: 'Low', vulnerabilitySituation: 2.0 },
   ]
 
   const [highlighted, setHighlighted] = useState<any>(api)
@@ -42,7 +44,7 @@ function Home() {
         ))}
       </HighlightedVulnerabilities>
       <div className='container_graphics'>
-        <ScrollMaster>
+        <ScrollMaster flexDirection={'column'}>
           <CardGraphics title='Monthly report' />
           <CardGraphics title='Annual reports' />
         </ScrollMaster>
