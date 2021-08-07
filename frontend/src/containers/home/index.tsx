@@ -2,22 +2,18 @@
 import React, { useState } from 'react'
 
 // Components
-import Header from '../../components/Header';
-import CardHighligted from '../../components/CardHighligted';
-import CardGraphics from '../../components/CardGraphics';
+import Header from '../../components/Header'
+import CardHighligted from '../../components/CardHighligted'
+import CardGraphics from '../../components/CardGraphics'
 
 // Styles
 import {
   Container,
   HighlightedVulnerabilities,
-} from './styles';
+} from './styles'
 
 // Local
-import { ScrollMaster } from '../../styles/global';
-
-// interface HighlightedType {
-//   HighVulne: cardVulnerabilitiesProps
-// }
+import { ScrollMaster } from '../../styles/global'
 
 function Home() {
 

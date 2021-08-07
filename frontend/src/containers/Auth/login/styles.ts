@@ -12,11 +12,6 @@ export const Container = styled.div`
   display: flex;
   height: 100%;
 
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    
-    /* flex-direction: column-reverse; */
-  }
-
   @media screen and (max-width: 767px) {
     flex-direction: column-reverse;
   }

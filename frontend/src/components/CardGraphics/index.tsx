@@ -14,7 +14,7 @@ interface GraphicsProps {
 function CardGraphics({ title }: GraphicsProps) {
   return (
     <Container>
-      {title ?? 'p'}
+      {title}
       <Graphic />
     </Container>
   )

@@ -1,8 +1,8 @@
 // Third party
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 // Consts
-import { COLORS } from '../../styles/variables';
+import { COLORS } from '../../styles/variables'
 
 interface BorderColorProps {
   BorderColor: string

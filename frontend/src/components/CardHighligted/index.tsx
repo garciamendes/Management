@@ -1,6 +1,5 @@
 // React
 import React from 'react'
-import { COLORS } from '../../styles/variables'
 
 // Styles
 import {
@@ -9,6 +8,9 @@ import {
   Level
 } from './styles'
 
+// Local
+import { COLORS } from '../../styles/variables'
+
 export interface cardVulnerabilitiesProps {
   amount: number
   level: string
@@ -16,11 +18,6 @@ export interface cardVulnerabilitiesProps {
 }
 
 function CardHighligted({ amount, level, vulnerabilitySituation }: cardVulnerabilitiesProps) {
-
-  // Low	0.1-3.9
-  // Medium	4.0-6.9
-  // High	7.0-10.0
-  // Critical	9.0-10.0
 
   let LevelVulnerabilitiies = ''
   let colorLevelVulnerabilitiies = `${COLORS.GreenLight}`
