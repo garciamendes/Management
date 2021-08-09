@@ -68,6 +68,15 @@ export const Container = styled.div`
       background-color: ${COLORS.White};
     }
 
+    .content_logout {
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }

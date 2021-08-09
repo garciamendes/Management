@@ -1,6 +1,6 @@
 // React
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 // Styles
 import { Container, Avatar } from './styles'
@@ -10,11 +10,17 @@ import SignOut from '../../static/Images/sign-out.svg'
 import NoImage from '../../static/Images/no-image.png'
 
 function Header() {
+  const history = useHistory()
 
   const [isActive, setIsActive] = useState<boolean>(false)
 
   function handleShowMenu() {
     setIsActive(!isActive)
+  }
+
+  function handleLogout() {
+    localStorage.removeItem('token')
+    history.push('/')
   }
 
   return (
@@ -29,10 +35,13 @@ function Header() {
             <Link to='/hosts' className='nav-link'>Hosts</Link>
           </li>
           <li className='nav-item'>
-            <Link to='/host/:id' className='nav-link'>Vulnerabilities</Link>
+            <Link to='/vulnerabilities/' className='nav-link'>Vulnerabilities</Link>
           </li>
           <li className='nav-item'>
-            <img className='sign_out' src={SignOut} alt='Sign out application' />
+            <div onClick={handleLogout} className='content_logout'>
+              <img className='sign_out' src={SignOut} alt='Sign out application' />
+              <span>Sair</span>
+            </div>
           </li>
         </ul>
         <div
