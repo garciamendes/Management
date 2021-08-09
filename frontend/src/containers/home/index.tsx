@@ -18,10 +18,10 @@ import { ScrollMaster } from '../../styles/global'
 function Home() {
 
   const api = [
-    { amount: 1000, level: 'Critical', vulnerabilitySituation: 10.0 },
-    { amount: 790, level: 'High', vulnerabilitySituation: 7.0 },
-    { amount: 520, level: 'Medium', vulnerabilitySituation: 4.0 },
-    { amount: 2000, level: 'Low', vulnerabilitySituation: 2.0 },
+    { amount: 1000, level: 'Critica', vulnerabilitySituation: 10.0 },
+    { amount: 790, level: 'Alta', vulnerabilitySituation: 7.0 },
+    { amount: 520, level: 'Médio', vulnerabilitySituation: 4.0 },
+    { amount: 2000, level: 'Baixa', vulnerabilitySituation: 2.0 },
   ]
 
   const [highlighted, setHighlighted] = useState<any>(api)
