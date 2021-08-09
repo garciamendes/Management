@@ -1,12 +1,19 @@
 // React
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
+// Redux
+import { useDispatch } from 'react-redux'
+import { fetchAuth } from '../../../stores/modules/auth/actions'
+
+// Third party
+import toast from 'react-hot-toast'
 
 // Local
 import DemoImg from '../../../static/Images/log-in.svg'
 import Logo from '../../../static/Images/logo.svg'
 import EyeON from '../../../static/Images/eye-on.svg'
 import EyeOff from '../../../static/Images/eye-off.svg'
-
 
 // Styles
 import {
@@ -23,6 +30,8 @@ import {
 import { COLORS } from '../../../styles/variables'
 
 function Login() {
+  const history = useHistory()
+  const dispatch = useDispatch()
 
   const [showPassword, setShowPassword] = useState(false)
   const [username, setUsername] = useState('')
@@ -32,17 +41,25 @@ function Login() {
     setShowPassword(!showPassword)
   }
 
+  function handlePressKey(event: any) {
+    if (event.key === 'Enter') {
+      handleEnter()
+    }
+  }
+
   async function handleEnter() {
 
     if (username.trim() === '' || password.trim() === '') {
       return (
-        alert('Todos os campos são obrigatórios'),
+        toast.error('Todos os campos são obrigatórios'),
         setUsername(''),
         setPassword('')
       )
     }
 
-    alert("asd")
+    dispatch(fetchAuth({ username: username, password: password }, () => {
+      history.push('/dashboard')
+    }))
   }
 
   return (
@@ -57,15 +74,17 @@ function Login() {
           <form className='form_login_user'>
             <Input
               type='text'
-              placeholder='Username'
+              placeholder='Nome de usuário'
               value={username}
+              onKeyPress={handlePressKey}
               onChange={(e) => setUsername(e.target.value)}
             />
             <div className='content_password_eye'>
               <Input
                 type={`${showPassword ? 'type' : 'password'}`}
-                placeholder='Password'
+                placeholder='Senha'
                 value={password}
+                onKeyPress={handlePressKey}
                 onChange={(e) => setPassword(e.target.value)}
               />
               {showPassword ? (
@@ -88,7 +107,7 @@ function Login() {
             </div>
           </form>
           <Button onClick={handleEnter}>
-            Access
+            Acesar
           </Button>
         </div>
       </SideContainer>
