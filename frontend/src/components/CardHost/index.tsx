@@ -1,6 +1,9 @@
 // React
 import React from 'react'
 
+// Local
+import { COLORS } from '../../styles/variables'
+
 // Styles
 import {
   Container,
@@ -18,6 +21,22 @@ export interface CardHostProps {
 }
 
 function CardHost({ hostname, risk, count_vulnerability }: CardHostProps) {
+
+  let colorLevelVulnerabilitiies = `${COLORS.GreenLight}`
+
+  if (risk <= 3.9) {
+    colorLevelVulnerabilitiies = `${COLORS.Gray}`
+  }
+  else if (risk <= 6.9) {
+    colorLevelVulnerabilitiies = `${COLORS.Yellow}`
+  }
+  else if (risk < 9) {
+    colorLevelVulnerabilitiies = `${COLORS.Red}`
+  }
+  else if (risk <= 10) {
+    colorLevelVulnerabilitiies = `${COLORS.orange}`
+  }
+
   return (
     <Container>
       <ContentTitle>
@@ -26,7 +45,7 @@ function CardHost({ hostname, risk, count_vulnerability }: CardHostProps) {
       <ContentRisk>
         <ContentSubTitle>
           Risco:
-          <ContentInfoTotal color={'#FF0000'}>{risk}</ContentInfoTotal>
+          <ContentInfoTotal bgColor={colorLevelVulnerabilitiies}>{risk}</ContentInfoTotal>
         </ContentSubTitle>
       </ContentRisk>
       <TotalVulnerability>

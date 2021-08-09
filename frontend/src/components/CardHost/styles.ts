@@ -4,6 +4,10 @@ import styled from 'styled-components'
 // Consts
 import { COLORS } from '../../styles/variables'
 
+interface BgColorProps {
+  bgColor?: string
+}
+
 export const Container = styled.div`
   cursor: pointer;
   display: flex;
@@ -52,11 +56,11 @@ export const ContentSubTitle = styled.span`
   font-size: 18px;
 `
 
-export const ContentInfoTotal = styled.span`
+export const ContentInfoTotal = styled.span<BgColorProps>`
   font-size: 16px;
   padding: 2% 4%;
   margin-left: 2%;
   border-radius: 10px;
-  color: ${(props) => props.color ?? COLORS.BlackDark};
-  background-color: ${COLORS.Gray};
+  color: ${COLORS.White};
+  background-color: ${(props) => props.bgColor ?? COLORS.BlackDark};
 `
