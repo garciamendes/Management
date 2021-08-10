@@ -5,9 +5,11 @@ export const COLORS = {
   GreenLight: '#27D3A8',
   BlackDark: '#222222',
   Red: '#EF476F',
+  orange: '#f48c06',
   Yellow: '#FFD166',
   Gray: '#ADB5BD',
   Background: '#E5E5E5',
+  BackgroundInput: '#E3E3E3',
 }
 
 export const HeaderHeight = {

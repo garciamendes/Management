@@ -1,21 +1,26 @@
 // Third party
-import { HashRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Switch } from 'react-router-dom'
 
 // Project
-import home from './containers/home'
+import dashboard from './containers/dashboard'
 import login from './containers/Auth/login'
-import sign from './containers/Auth/sign'
+import hosts from './containers/hosts'
+import detailHost from './containers/detailHost'
+import vulnerability from './containers/vulnerability'
+
+// Components
+import PublicRoute from './components/PublicRoute'
+import PrivateRoute from './components/PrivateRoute'
 
 export default function Routes() {
   return (
     <HashRouter>
       <Switch>
-        <Route path='/' exact component={login} />
-        <Route path='/sign' exact component={sign} />
-        <Route path='/home' component={home} />
-        {/* <Route path='/detail/hosts' component={hostsDetails} /> */}
-        {/* <Route path='/list/hosts' component={hosts} /> */}
-        {/* <Route path='/list/vulnerabilities' component={vulnerabilities} /> */}
+        <PublicRoute path='/' exact redirect={true} component={login} />
+        <PrivateRoute path='/dashboard' exact component={dashboard} />
+        <PrivateRoute path='/hosts' exact component={hosts} />
+        <PrivateRoute path='/host/:pk/:title' exact component={detailHost} />
+        <PrivateRoute path='/vulnerabilities/' exact component={vulnerability} />
       </Switch>
     </HashRouter>
   )
