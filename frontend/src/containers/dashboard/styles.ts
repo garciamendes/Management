@@ -12,7 +12,7 @@ export const Container = styled.div`
   }
 `
 
-export const HighlightedVulnerabilities = styled.div`
+export const ContainerTotalVulnerabilities = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;

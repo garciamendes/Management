@@ -20,7 +20,7 @@ export const Container = styled.div`
   background: ${COLORS.White};
 `
 
-export const AmountVulnerabilities = styled.div<BorderColorProps>`
+export const NumberOfVulnerabilities = styled.div<BorderColorProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +33,7 @@ export const AmountVulnerabilities = styled.div<BorderColorProps>`
   border: 3px solid ${(props) => props.BorderColor};
 `
 
-export const Level = styled.span`
+export const Severity = styled.span`
   font-size: 18px;
   font-weight: 500;
   color: ${COLORS.BlackDark};
