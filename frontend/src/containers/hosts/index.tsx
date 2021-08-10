@@ -56,8 +56,8 @@ function Hosts() {
                   click={() => handleDetailHost(content.id, content.hostname)}
                   key={content.id}
                   hostname={content.hostname}
-                  risk={content.risk}
-                  count_vulnerability={content.vuln_count}
+                  cvss={content.risk}
+                  total_vunerabilities={content.vuln_count}
                 />
               ))
             )}

@@ -16,25 +16,25 @@ import {
 
 export interface CardHostProps {
   hostname: string
-  risk: number
-  count_vulnerability: number
+  cvss: number
+  total_vunerabilities: number
   click: () => void
 }
 
-function CardHost({ hostname, risk, count_vulnerability, click }: CardHostProps) {
+function CardHost({ hostname, cvss, total_vunerabilities, click }: CardHostProps) {
 
   let colorLevelVulnerabilitiies = `${COLORS.GreenLight}`
 
-  if (risk <= 3.9) {
+  if (cvss <= 3.9) {
     colorLevelVulnerabilitiies = `${COLORS.Gray}`
   }
-  else if (risk <= 6.9) {
+  else if (cvss <= 6.9) {
     colorLevelVulnerabilitiies = `${COLORS.Yellow}`
   }
-  else if (risk < 9) {
+  else if (cvss < 9) {
     colorLevelVulnerabilitiies = `${COLORS.Red}`
   }
-  else if (risk <= 10) {
+  else if (cvss <= 10) {
     colorLevelVulnerabilitiies = `${COLORS.orange}`
   }
 
@@ -46,13 +46,13 @@ function CardHost({ hostname, risk, count_vulnerability, click }: CardHostProps)
       <ContentRisk>
         <ContentSubTitle>
           Risco:
-          <ContentInfoTotal bgColor={colorLevelVulnerabilitiies}>{risk}</ContentInfoTotal>
+          <ContentInfoTotal bgColor={colorLevelVulnerabilitiies}>{cvss}</ContentInfoTotal>
         </ContentSubTitle>
       </ContentRisk>
       <TotalVulnerability>
         <ContentSubTitle>
           Total de vulnerabilidades:
-          <ContentInfoTotal>{count_vulnerability}</ContentInfoTotal>
+          <ContentInfoTotal>{total_vunerabilities}</ContentInfoTotal>
         </ContentSubTitle>
       </TotalVulnerability>
     </Container>
