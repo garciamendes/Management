@@ -1,8 +1,8 @@
 import { StateDefaultType } from "../../types";
 
 export enum HostsTypes {
-  FETCH_LIST = 'FETCH_LIST',
-  FETCH_LIST_SUCCESS = 'FETCH_LIST_SUCCESS',
+  FETCH_HOSTS_LIST = 'FETCH_HOSTS_LIST',
+  FETCH_HOST_LIST_SUCCESS = 'FETCH_HOST_LIST_SUCCESS',
 }
 
 export interface HostsProps {

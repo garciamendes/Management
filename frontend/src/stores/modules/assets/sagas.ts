@@ -29,5 +29,5 @@ function* fetchHostsSuccessSaga() {
 }
 
 export default all([
-  takeLatest(HostsTypes.FETCH_LIST, fetchHostsSuccessSaga),
+  takeLatest(HostsTypes.FETCH_HOSTS_LIST, fetchHostsSuccessSaga),
 ])

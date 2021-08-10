@@ -1,15 +1,15 @@
 // Local
-import { HostsTypes, HostsState } from './types'
+import { HostsTypes, HostsState, } from './types'
 
 export const fetchHostsList = () => {
   return {
-    type: HostsTypes.FETCH_LIST
+    type: HostsTypes.FETCH_HOSTS_LIST
   }
 }
 
 export const fetchHostsListSuccess = (data: HostsState) => {
   return {
-    type: HostsTypes.FETCH_LIST_SUCCESS,
+    type: HostsTypes.FETCH_HOST_LIST_SUCCESS,
     payload: data,
   }
 }
