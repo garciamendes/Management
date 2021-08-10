@@ -14,7 +14,7 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 15px;
   padding: 1%;
-  width: 30%;
+  width: 300px;
   border-radius: 14px;
   background-color: ${COLORS.White};
 
@@ -30,6 +30,14 @@ export const Container = styled.div`
       color: ${(props) => props.color ?? COLORS.BlackDark};
       background-color: ${COLORS.Gray};
     }
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 2%;
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 3%;
   }
 `
 

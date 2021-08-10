@@ -1,5 +1,8 @@
 // React
 import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
+
+// Redux
 import { useDispatch, useSelector } from 'react-redux'
 
 // Components
@@ -20,6 +23,7 @@ import { HostsState } from '../../stores/modules/assets/types'
 import { fetchHostsList } from '../../stores/modules/assets/actions'
 
 function Hosts() {
+  const history = useHistory()
   const dispatch = useDispatch()
 
   const hosts = useSelector<ReduxState, HostsState>(stores => stores.hosts)
@@ -27,6 +31,10 @@ function Hosts() {
   useEffect(() => {
     dispatch(fetchHostsList())
   }, [dispatch])
+
+  function handleDetailHost(id: any, title: any) {
+    history.push(`/host/${id}/${title}`)
+  }
 
   return (
     <Container>
@@ -45,6 +53,7 @@ function Hosts() {
             ) : (
               hosts.results.map(content => (
                 <CardHost
+                  click={() => handleDetailHost(content.id, content.hostname)}
                   key={content.id}
                   hostname={content.hostname}
                   risk={content.risk}

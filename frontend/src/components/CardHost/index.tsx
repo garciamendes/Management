@@ -18,9 +18,10 @@ export interface CardHostProps {
   hostname: string
   risk: number
   count_vulnerability: number
+  click: () => void
 }
 
-function CardHost({ hostname, risk, count_vulnerability }: CardHostProps) {
+function CardHost({ hostname, risk, count_vulnerability, click }: CardHostProps) {
 
   let colorLevelVulnerabilitiies = `${COLORS.GreenLight}`
 
@@ -38,7 +39,7 @@ function CardHost({ hostname, risk, count_vulnerability }: CardHostProps) {
   }
 
   return (
-    <Container>
+    <Container onClick={click}>
       <ContentTitle>
         <p>{hostname}</p>
       </ContentTitle>
