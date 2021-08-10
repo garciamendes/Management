@@ -27,6 +27,9 @@ Projeto para melhorar sua performance, com o objetivo de organizar e manipular d
 
 Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/ERLFc7chBEq4cPV31SiWRk/Untitled?node-id=0%3A1). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
 
+### Configurando a `.env`
+Configure seu `.env` de acordo com `.env.example`. Adicionando o URL da API
+
 ## 🚀 Como executar
 
 - Clone o repositório
@@ -35,9 +38,6 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 #### OR
 - (`usando npm`)Instale as dependências com `npm install`
 - (`usando npm`)Inicie o servidor com `npm run start`
-
-### Configurando a `.env`
-Configure seu `.env` de acordo com `.env.example`. Adicionando o URL da API
 
 ### Acessando o project no *browser*
 Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navegador.
