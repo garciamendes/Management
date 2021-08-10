@@ -37,6 +37,23 @@ export const Container = styled.div`
       transition: 0.3s;
       border-radius: 10px 0px 0px 10px;
       background-color: ${COLORS.White};
+
+      @media screen and (max-width: 980px) {
+        width: 25%;
+      }
+
+      @media screen and (max-width: 690px) {
+        width: 30%;
+        height: 30%;
+      }
+
+      @media screen and (max-width: 525px) {
+        width: 40%;
+      }
+
+      @media screen and (max-width: 415px) {
+        width: 70%;
+      }
     }
 
     .nav-menu.active {
@@ -78,15 +95,15 @@ export const Container = styled.div`
     }
 
     .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
+      opacity: 0;
     }
 
     .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+      transform: translateY(8px) rotate(45deg);
     }
 
     .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-8px) rotate(-45deg);
     }
   }
 `
