@@ -5,6 +5,7 @@ import { HashRouter, Switch } from 'react-router-dom'
 import home from './containers/home'
 import login from './containers/Auth/login'
 import hosts from './containers/hosts'
+import detailHost from './containers/detailHost'
 import vulnerability from './containers/vulnerability'
 
 // Components
@@ -18,6 +19,7 @@ export default function Routes() {
         <PublicRoute path='/' exact redirect={true} component={login} />
         <PrivateRoute path='/dashboard' exact component={home} />
         <PrivateRoute path='/hosts' exact component={hosts} />
+        <PrivateRoute path='/host/:pk/:title' exact component={detailHost} />
         <PrivateRoute path='/vulnerabilities/' exact component={vulnerability} />
       </Switch>
     </HashRouter>
