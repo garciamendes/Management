@@ -1,8 +1,11 @@
 // Local
-import { HostsState } from "./modules/assets/types"
-import { VulnerabilitiesState } from "./modules/vulnerability/types";
+import { HostsState } from './modules/assets/types'
+import { HostDetailState } from './modules/detailHost/types'
+import { VulnerabilitiesState } from './modules/vulnerability/types'
 
 export interface StateDefaultType {
+  pk: string | number
+  status: number | string
   count: string | number
   next: number
   previous: number
@@ -12,4 +15,5 @@ export interface StateDefaultType {
 export interface ReduxState {
   vulnerabilities: VulnerabilitiesState
   hosts: HostsState
+  hostDetail: HostDetailState
 }
