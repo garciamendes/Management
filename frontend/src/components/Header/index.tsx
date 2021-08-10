@@ -35,7 +35,7 @@ function Header() {
             <Link to='/hosts' className='nav-link'>Hosts</Link>
           </li>
           <li className='nav-item'>
-            <Link to='/vulnerabilities/' className='nav-link'>Vulnerabilities</Link>
+            <Link to='/vulnerabilities/' className='nav-link'>Vunerabilidades</Link>
           </li>
           <li className='nav-item'>
             <div onClick={handleLogout} className='content_logout'>
